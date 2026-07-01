@@ -47,25 +47,43 @@
 					{item.description}
 				</p>
 
-				<div class="flex flex-wrap gap-4 text-sm text-gray-500 bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
-					<div class="flex items-center gap-2">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-						</svg>
-						<span>Ответственный: <span class="font-medium text-gray-900">{item.responsible}</span></span>
-					</div>
-					<div class="flex items-center gap-2">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-						</svg>
-						<span>Обновлено: <span class="font-medium text-gray-900">{item.date}</span></span>
-					</div>
-					{#if item.program}
-						<div class="flex items-center gap-2">
+				<div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+					<div class="flex-grow space-y-3">
+						<div class="flex items-center gap-2 text-sm text-gray-500">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
 							</svg>
-							<span>Направление: <span class="font-medium text-gray-900 uppercase">{item.program === 'both' ? 'Ординатура / Аспирантура' : item.program}</span></span>
+							<span>Ответственный: <span class="font-medium text-gray-900">{item.responsible}</span></span>
+						</div>
+						<div class="flex items-center gap-2 text-sm text-gray-500">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+							</svg>
+							<span>Обновлено: <span class="font-medium text-gray-900">{item.date}</span></span>
+						</div>
+						{#if item.program}
+							<div class="flex items-center gap-2 text-sm text-gray-500">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+								</svg>
+								<span>Направление: <span class="font-medium text-gray-900 uppercase">{item.program === 'both' ? 'Ординатура / Аспирантура' : item.program}</span></span>
+							</div>
+						{/if}
+					</div>
+
+					{#if item.fileUrl}
+						<div class="flex items-center">
+							<a
+								href={item.fileUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-100 group w-full md:w-auto"
+							>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+								</svg>
+								Открыть PDF документ
+							</a>
 						</div>
 					{/if}
 				</div>
