@@ -1,11 +1,10 @@
 
 > app@0.0.1 dev
-> vite dev --port 5173
+> vite dev
 
-8:02:19 PM [vite] (client) Forced re-optimization of dependencies
+9:03:04 PM [vite] (client) Forced re-optimization of dependencies
 
-  VITE v8.1.2  ready in 1589 ms
+  VITE v8.1.2  ready in 1777 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-8:03:33 PM [vite] (ssr) page reload src/routes/+page.svelte
