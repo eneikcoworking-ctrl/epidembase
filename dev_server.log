@@ -1,0 +1,66 @@
+
+> app@0.0.1 dev
+> vite dev
+
+
+  VITE v8.1.2  ready in 2222 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/3.js
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+11:10:56 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+11:10:56 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+11:10:56 PM [vite] (client) page reload .svelte-kit/generated/root.js
+11:10:56 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+11:10:56 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/3.js
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+11:11:01 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+11:11:01 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+11:11:01 PM [vite] (client) page reload .svelte-kit/generated/root.js
+11:11:01 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+11:11:01 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/3.js
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+11:11:04 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+11:11:04 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+11:11:04 PM [vite] (client) page reload .svelte-kit/generated/root.js
+11:11:04 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+11:11:04 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+11:11:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/0.js
+11:11:06 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/1.js
+11:11:07 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/3.js
+11:11:07 PM [vite] (client) page reload .svelte-kit/generated/client/nodes/2.js
+11:11:07 PM [vite] (client) page reload .svelte-kit/generated/client/app.js
+11:11:07 PM [vite] (client) page reload .svelte-kit/generated/client/matchers.js
+11:11:07 PM [vite] (ssr) page reload .svelte-kit/generated/shared/error-template.js
+11:11:07 PM [vite] (ssr) page reload .svelte-kit/generated/server/internal.js
+11:11:07 PM [vite] (client) page reload .svelte-kit/generated/root.js
+11:11:07 PM [vite] (ssr) page reload .svelte-kit/generated/root.js
+11:11:07 PM [vite] (ssr) page reload .svelte-kit/generated/root.svelte
+11:11:07 PM [vite] (client) page reload build/index.html
+11:11:07 PM [vite] (client) page reload build/content/fgos-31-08-35-infectious/index.html
+11:11:07 PM [vite] (client) page reload build/content/fgos-31-08-19-pediatrics/index.html
+11:11:07 PM [vite] (client) page reload build/content/fgos-32-08-12-epidemiology/index.html
+11:11:07 PM [vite] (client) page reload build/content/polozhenie-gia-aspirant/index.html
+11:11:07 PM [vite] (client) page reload build/content/polozhenie-oc/index.html
+11:11:07 PM [vite] (client) page reload build/content/poryadok-priema-2026/index.html
+11:11:07 PM [vite] (client) page reload build/content/sanpin-3-3686-21/index.html
+11:11:07 PM [vite] (client) page reload build/content/shablon-otchet-praktika/index.html
+11:11:07 PM [vite] (client) page reload build/content/polozhenie-stipendia-2024/index.html
+11:11:07 PM [vite] (client) page reload build/404.html
+11:11:07 PM [vite] (client) page reload build/content/gia-reglament/index.html
+11:11:07 PM [vite] (client) page reload build/404.html
