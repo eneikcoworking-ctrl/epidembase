@@ -48,6 +48,26 @@
 		selectedProgram = 'all';
 		selectedYear = 'all';
 	}
+
+	function escapeRegExp(string: string) {
+		return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	}
+
+	function highlightMatch(text: string, query: string) {
+		if (!query.trim()) return text;
+		const escapedQuery = escapeRegExp(query.trim());
+		const regex = new RegExp(`(${escapedQuery})`, 'gi');
+
+		// Basic escaping to prevent XSS while allowing our <mark> tags
+		const escapedText = text
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#039;');
+
+		return escapedText.replace(regex, '<mark class="bg-yellow-200 text-gray-900 rounded-sm px-0.5">$1</mark>');
+	}
 </script>
 
 <div class="bg-blue-600 text-white py-12 md:py-20 mb-8 md:mb-12">
@@ -182,8 +202,7 @@
 			{#if filteredContent.length > 0}
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 					{#each filteredContent as item (item.id)}
-						<a
-							href="/content/{item.id}"
+						<div
 							class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all p-5 flex flex-col h-full group"
 						>
 							<div class="flex items-start justify-between mb-4">
@@ -197,12 +216,19 @@
 										{item.type === 'article' ? 'Статья' : 'Документ'}
 									</span>
 									{#if item.fileUrl}
-										<span class="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700">
+										<a
+											href={item.fileUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											download
+											class="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700 hover:bg-red-200 transition-colors"
+											title="Открыть / Скачать PDF"
+										>
 											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
 											</svg>
 											PDF
-										</span>
+										</a>
 									{/if}
 									{#if item.status === 'archive'}
 										<span
@@ -219,13 +245,15 @@
 								<span class="text-xs text-gray-400 font-medium">v{item.version}</span>
 							</div>
 
-							<h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-								{item.title}
-							</h3>
+							<a href="/content/{item.id}" class="flex-grow block">
+								<h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+									{@html highlightMatch(item.title, searchQuery)}
+								</h3>
 
-							<p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">
-								{item.description}
-							</p>
+								<p class="text-sm text-gray-600 mb-4 line-clamp-2">
+									{@html highlightMatch(item.description, searchQuery)}
+								</p>
+							</a>
 
 							<div class="flex flex-wrap gap-1 mb-4">
 								{#each item.tags.slice(0, 3) as tag}
@@ -245,7 +273,7 @@
 								</div>
 								<span class="text-xs text-gray-400">{item.date}</span>
 							</div>
-						</a>
+						</div>
 					{/each}
 				</div>
 			{:else}
